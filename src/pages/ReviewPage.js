@@ -1,9 +1,13 @@
 import React from 'react'
+import Navbar from "../components/Navbar";
 
-function ReviewPage() {
+function WriteReviewPage() {
   return (
-    <h1> Review Page </h1>
+    <div>
+      <Navbar></Navbar>
+      <h1>Write Review Page</h1>
+    </div>
   )
 }
 
-export default ReviewPage;
+export default WriteReviewPage

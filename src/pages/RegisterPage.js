@@ -1,7 +1,12 @@
+import Register from "../components/Register";
+import Navbar from "../components/Navbar";
 
 function RegisterPage() {
   return (
-    <h1> This is Register Page</h1>
+    <div>
+      <Navbar />
+      <Register />
+    </div>
   )
   
 }

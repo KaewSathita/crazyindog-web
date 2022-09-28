@@ -11,3 +11,27 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.login-bg {
+
+  background: linear-gradient(
+          rgba(0, 0, 0, 0.7),
+          rgba(0, 0, 0, 0.7)
+        ),
+  url("https://res.cloudinary.com/fakebuck12/image/upload/v1664351087/crazyindog/1663515875945_usrytk.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.crazyindog-logo {
+  max-width: 100px;
+  padding-bottom: 50px;
+}
+
+.crazyindog-logo2 {
+  max-width: 100px;
+}
+
+
