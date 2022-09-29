@@ -1,6 +1,6 @@
 
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 function Navbar() {
 
@@ -37,11 +37,10 @@ function Navbar() {
             </li>
             <li className="nav-item">
               <NavLink className="nav-link" to="/register">
-                <button className="btn btn-dark">Register</button>
+                <button className="btn btn-light">Register</button>
               </NavLink>
             </li>
           </ul>
-
         </div>
       </div>
     </nav>
