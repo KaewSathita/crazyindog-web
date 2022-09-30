@@ -1,11 +1,14 @@
 import React from 'react'
+import Footer from '../components/Footer';
 import Navbar from "../components/Navbar";
+import ReviewPage from '../components/ReviewPage';
 
 function WriteReviewPage() {
   return (
     <div>
       <Navbar></Navbar>
-      <h1>Write Review Page</h1>
+      <ReviewPage></ReviewPage>
+      <Footer></Footer>
     </div>
   )
 }
