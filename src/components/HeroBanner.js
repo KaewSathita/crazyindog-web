@@ -10,21 +10,21 @@ function HeroBanner() {
       </div>
       <div className="carousel-inner">
         <div className="carousel-item active">
-          <img src="https://res.cloudinary.com/fakebuck12/image/upload/v1664441112/crazyindog/Cover_zr0erp.jpg" className="d-block w-100" style={{height: "587px", overflow: "hidden"}} alt="picture1"/>
+          <img src="https://res.cloudinary.com/crazyindog/image/upload/v1664436058/crazyindog/Cover_mhnjrs.jpg" className="d-block w-100" style={{height: "587px", overflow: "hidden"}} alt="picture1"/>
           <div className="carousel-caption d-none d-md-block">
             <h5>First slide label</h5>
             <p>Some representative placeholder content for the first slide.</p>
           </div>
         </div>
         <div className="carousel-item">
-          <img src="https://res.cloudinary.com/fakebuck12/image/upload/v1664441112/crazyindog/Cover_zr0erp.jpg" className="d-block w-100" style={{height: "587px", overflow: "hidden"}} alt="picture2"/>
+          <img src="https://res.cloudinary.com/crazyindog/image/upload/v1664436058/crazyindog/Cover_mhnjrs.jpg" className="d-block w-100" style={{height: "587px", overflow: "hidden"}} alt="picture2"/>
           <div className="carousel-caption d-none d-md-block">
             <h5>Second slide label</h5>
             <p>Some representative placeholder content for the second slide.</p>
           </div>
         </div>
         <div className="carousel-item">
-          <img src="https://res.cloudinary.com/fakebuck12/image/upload/v1664441112/crazyindog/Cover_zr0erp.jpg" className="d-block w-100" style={{height: "587px", overflow: "hidden"}} alt="picture3"/>
+          <img src="https://res.cloudinary.com/crazyindog/image/upload/v1664436058/crazyindog/Cover_mhnjrs.jpg" className="d-block w-100" style={{height: "587px", overflow: "hidden"}} alt="picture3"/>
           <div className="carousel-caption d-none d-md-block">
             <h5>Third slide label</h5>
             <p>Some representative placeholder content for the third slide.</p>
