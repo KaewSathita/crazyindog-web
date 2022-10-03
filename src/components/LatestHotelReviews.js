@@ -10,7 +10,7 @@ function LatestHotelReviews() {
           <h3 className="mb-0">พาน้องหมานั่งเรือพาย</h3>
           <div className="mb-1 text-muted">12 Nov 2564</div>
           <p className="card-text mb-auto">ยิมไลฟ์เกมส์ล็อบบี้อพาร์ตเมนต์ ปอดแหกราเมน วานิลลาซันตาคลอส มยุราภิรมย์กษัตริยาธิราชช็อปเปอร์อีสเตอร์ฮิปฮอป ปัจฉิมนิเทศยาวีสคริปต์อัตลักษณ์ นินจาพุทธภูมิเที่ยงวันแกสโซฮอล์ แพนดา</p>
-          <a href="#" className="stretched-link">อ่านต่อ...</a>
+          <a href="/review" className="stretched-link">อ่านต่อ...</a>
         </div>
         <div className="col-auto d-none d-lg-block">
         <div className="picDog col-auto d-none d-lg-block">
