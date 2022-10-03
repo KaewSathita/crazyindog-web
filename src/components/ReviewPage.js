@@ -3,13 +3,13 @@ import React from 'react'
 function ReviewPage() {
   return (
   <div className="p-5 mb-4 bg-light rounded-3">
-    <img src="https://res.cloudinary.com/fakebuck12/image/upload/v1664530644/crazyindog/Cover_mr0aeu.jpg" class="img-fluid" ></img>
+    <img src="https://res.cloudinary.com/crazyindog/image/upload/v1664530644/crazyindog/Cover_mr0aeu.jpg" class="img-fluid" ></img>
     <i className="calendar-date eye star" />
     <h1 className="display-5 fw-bold mt-5 mb-5">ปะ ไปเที่ยวกัน Truelove @Neverland</h1>
 
     <p className="col-md-8 fs-4"> 12 มีนาคม 2565 </p>
-    
 
+   
 
 
 

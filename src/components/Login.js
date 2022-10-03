@@ -2,12 +2,13 @@ import { useState } from 'react';
 import { toast } from 'react-toastify';
 import { useAuth } from '../context/AuthContext';
 import { useLoading } from '../context/LoadingContext';
+import { useNavigate } from "react-router-dom";
 
 function Login() {
+  const navigate = useNavigate();
   const { login } = useAuth();
 
   const { startLoading, stopLoading } = useLoading();
-
 
   const [input, setInput] = useState({
     email: '',
@@ -24,6 +25,8 @@ function Login() {
     try {
       startLoading();
       await login(input);
+
+      navigate("/");
       toast.success('success login');
     } catch (err) {
       toast.error(err.response.data.message);
@@ -34,7 +37,7 @@ function Login() {
 
 
   return (
-    <div className={'login-bg'} onSubmit={handleSubmitForm}>
+    <div className={'login-bg'}>
       <div className="d-flex vh-100 justify-content-center align-items-center">
         <div className="card w-45" style={{maxWidth : "600px"}}  >
           <div className="card-body py-5 px-3">
