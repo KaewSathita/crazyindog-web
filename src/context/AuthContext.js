@@ -1,6 +1,8 @@
 import { createContext, useContext, useEffect, useState } from 'react';
 import * as authService from '../api/authApi';
 
+
+
 import { addAccessToken, getAccessToken, removeAccessToken } from '../utils/localStorage';
 
 const AuthContext = createContext();
@@ -35,6 +37,10 @@ function AuthContextProvider({ children }) {
     await getMe();
   }
 
+  const updateMe = async payload => {
+    await authService.updateMe(payload);
+    await getMe();
+  }
 
   const login = async input => {
     const res = await authService.login(input);
@@ -49,7 +55,7 @@ function AuthContextProvider({ children }) {
 
 
   return (
-    <AuthContext.Provider value={{ user, login, logout, register, initialLoading }}>
+    <AuthContext.Provider value={{ user, login, logout, register, updateMe, initialLoading }}>
       {children}
     </AuthContext.Provider>
   );

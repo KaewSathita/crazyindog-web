@@ -74,7 +74,7 @@ function Register() {
                 <input
                   type="text"
                   className="form-control rounded-md h-13"
-                  placeholder="penName"
+                  placeholder="Pen Name"
                   name="penName"
                   value={input.penName}
                   onChange={handleChangeInput}

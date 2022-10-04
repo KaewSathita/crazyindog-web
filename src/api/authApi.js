@@ -6,3 +6,4 @@ export const getMe = () => axios.get('./auth/me');
 export const register = ({firstName, lastName, penName, petBreed, email, password, confirmPassword} ) => axios.post('/auth/register', {
   firstName, lastName, penName, petBreed, email, password, confirmPassword
 })
+export const updateMe = (payload) => axios.post('./auth/me', payload);

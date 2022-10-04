@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import { useLoading } from '../context/LoadingContext';
 import { useAuth } from '../context/AuthContext';
 import { useNavigate } from "react-router-dom";
@@ -70,9 +70,9 @@ function Navbar() {
                 { user.penName } 
               </button>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="/profile">Profile</a></li>
-                <li><hr class="dropdown-divider" /></li>
-                <li><a class="dropdown-item" onClick={handleLogout}>Log out</a></li>
+                <li><Link class="dropdown-item" to="/profile">Profile</Link></li>
+                <li><hr className="dropdown-divider" /></li>
+                <li><a className="dropdown-item" onClick={handleLogout}>Log out</a></li>
               </ul>
             </div>
               )}
