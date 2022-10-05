@@ -1,5 +1,6 @@
 import { createContext, useContext, useEffect, useState } from 'react';
 import * as authService from '../api/authApi';
+import * as userService from '../api/profileImageApi';
 
 
 
@@ -26,19 +27,9 @@ function AuthContextProvider({ children }) {
     fetchMe();
   }, []);
 
-  const getMe = async () => {
-    const res = await authService.getMe();
-    setUser(res.data.user);
-  };
-
   const register = async input => {
     const res = await authService.register(input);
     addAccessToken(res.data.token);
-    await getMe();
-  }
-
-  const updateMe = async payload => {
-    await authService.updateMe(payload);
     await getMe();
   }
 
@@ -48,14 +39,28 @@ function AuthContextProvider({ children }) {
     await getMe();
   }
 
+  const getMe = async () => {
+    const res = await authService.getMe();
+    setUser(res.data.user);
+  };
+
+  const updateMe = async payload => {
+    await authService.updateMe(payload);
+    await getMe();
+  }
+
   const logout = async () => {
     setUser(null);
     removeAccessToken();
   }
 
+  const updateProfileImg = async (input) => {
+    const res = await userService.updateProfileImg(input);
+    setUser(res.data.user);
+  };
 
   return (
-    <AuthContext.Provider value={{ user, login, logout, register, updateMe, initialLoading }}>
+    <AuthContext.Provider value={{ user, login, logout, register, updateMe, initialLoading, updateProfileImg }}>
       {children}
     </AuthContext.Provider>
   );

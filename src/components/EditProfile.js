@@ -1,11 +1,10 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { toast } from "react-toastify";
 import { useAuth } from "../context/AuthContext";
 import { useLoading } from "../context/LoadingContext";
 
-function Profile() {
-  const { user, updateMe } = useAuth();
-
+function EditProfile() {
+  const { user, updateMe, updateProfileImg } = useAuth();
   const { startLoading, stopLoading } = useLoading();
 
   const [input, setInput] = useState({
@@ -15,6 +14,10 @@ function Profile() {
     petBreed: "",
     email: "",
   });
+
+  const [file, setFile] = useState(null);
+
+  const inputEl =useRef();
 
   useEffect(() => {
     if (user) {
@@ -40,7 +43,20 @@ function Profile() {
   };
 
   const handleFileUploadForm = async (e) => {
-    console.log(e);
+    e.preventDefault();
+    try {
+      startLoading();
+      const formData = new FormData();
+      formData.append('profileImage', file)
+      await updateProfileImg(formData);
+      toast.success('successfully uploaded photo.')
+      setFile(null); 
+ 
+    } catch (err) {
+      toast.error(err.response.data.message);
+    } finally {
+      stopLoading();
+    }    
   };
 
   return (
@@ -51,26 +67,40 @@ function Profile() {
             <div className="mb-3">
               <img
                 className="avatar"
-                src="https://placehold.jp/300x300.png"
+                src={input.profilepicture?input.profilepicture:'https://placehold.jp/300x300.png'}
                 alt="Avatar"
-                style={{ maxWidth: "100%" }}
+                style={{ maxWidth: "100%", maxHeight: "300px" }}                
               />
+
             </div>
             <div className="mb-3" style={{ maxWidth: "300px" }}>
-              <label for="formFile" className="form-label">
+              <label htmlFor="formFile" className="form-label">
                 Browse your new avatar
               </label>
-              <input className="form-control" type="file" id="formFile" />
+              <input className="form-control" ref={inputEl} type="file" id="formFile" 
+                onChange={e => {
+                  // console.dir(e.target.files);
+                  if (e.target.files[0]){
+                    setFile(e.target.files[0]);
+                  }
+                }} 
+              />
+              
             </div>
             <div className="mb-2">
               <button className="btn btn-primary">Upload</button>
             </div>
           </form>
         </div>
+
+
+
+
+        
         <div className="col-md-4">
           <form onSubmit={handleSubmitForm}>
             <div className="mb-3">
-              <label for="email" className="form-label">
+              <label htmlFor="email" className="form-label">
                 Email address
               </label>
               <input
@@ -83,12 +113,12 @@ function Profile() {
                 onChange={handleChangeInput}
                 disabled={true}
               />
-              <div id="emailHelp" class="form-text">
+              <div id="emailHelp" className="form-text">
                 Email cannot be changed.
               </div>
             </div>
             <div className="mb-3">
-              <label for="firstName" className="form-label">
+              <label htmlFor="firstName" className="form-label">
                 First Name
               </label>
               <input
@@ -102,7 +132,7 @@ function Profile() {
               />
             </div>
             <div className="mb-3">
-              <label for="lastName" className="form-label">
+              <label htmlFor="lastName" className="form-label">
                 Last Name
               </label>
               <input
@@ -116,7 +146,7 @@ function Profile() {
               />
             </div>
             <div className="mb-3">
-              <label for="penName" className="form-label">
+              <label htmlFor="penName" className="form-label">
                 Pen Name
               </label>
               <input
@@ -130,7 +160,7 @@ function Profile() {
               />
             </div>
             <div className="mb-3">
-              <label for="petBreed" className="form-label">
+              <label htmlFor="petBreed" className="form-label">
                 Pet Breed
               </label>
               <input
@@ -160,4 +190,4 @@ function Profile() {
   );
 }
 
-export default Profile;
+export default EditProfile;

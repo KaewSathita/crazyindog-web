@@ -3,7 +3,7 @@ import { Routes, Route } from 'react-router-dom'
 import WebLayout from "../pages/layouts/WebLayout";
 import HomePage from '../pages/HomePage';
 import LoginPage from '../pages/LoginPage';
-import ProfilePage from '../pages/ProfilePage';
+import EditProfilePage from '../pages/EditProfilePage';
 import RegisterPage from '../pages/RegisterPage';
 import ReviewPage from '../pages/ReviewPage';
 import WriteReviewPage from '../pages/WriteReviewPage';
@@ -15,7 +15,7 @@ function Router() {
   return <Routes>
       <Route path= "/" element={<WebLayout />}>
         <Route path= "/" element={<HomePage />} />
-        <Route path= "/profile" element={<ProfilePage />} />
+        <Route path= "/editprofile" element={<EditProfilePage />} />
         <Route path= "/review" element={<ReviewPage />} />
         { user ? <Route path= "/writeReview" element={<WriteReviewPage />} /> : '' }
       </Route>

@@ -65,12 +65,12 @@ function Navbar() {
             </li>
           </ul>
            ) : (
-            <div class="dropdown">
-              <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <div className="dropdown">
+              <button className="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                 { user.penName } 
               </button>
-              <ul class="dropdown-menu">
-                <li><Link class="dropdown-item" to="/profile">Profile</Link></li>
+              <ul className="dropdown-menu">
+                <li><Link className="dropdown-item" to="/editProfile">Edit Profile</Link></li>
                 <li><hr className="dropdown-divider" /></li>
                 <li><a className="dropdown-item" onClick={handleLogout}>Log out</a></li>
               </ul>
