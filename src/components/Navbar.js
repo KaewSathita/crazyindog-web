@@ -67,7 +67,7 @@ function Navbar() {
            ) : (
             <div className="dropdown">
               <button className="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                { user.penName } 
+                { user.penName || user.firstName} 
               </button>
               <ul className="dropdown-menu">
                 <li><Link className="dropdown-item" to="/editProfile">Edit Profile</Link></li>
