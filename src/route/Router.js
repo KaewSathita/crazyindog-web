@@ -8,6 +8,8 @@ import RegisterPage from '../pages/RegisterPage';
 import ReviewPage from '../pages/ReviewPage';
 import WriteReviewPage from '../pages/WriteReviewPage';
 import { useAuth } from '../context/AuthContext';
+import MyProfilePage from '../pages/MyProfilePage';
+
 
 
 function Router() {
@@ -15,6 +17,7 @@ function Router() {
   return <Routes>
       <Route path= "/" element={<WebLayout />}>
         <Route path= "/" element={<HomePage />} />
+        <Route path= "/myprofile" element={<MyProfilePage />} />
         <Route path= "/editprofile" element={<EditProfilePage />} />
         <Route path= "/review" element={<ReviewPage />} />
         { user ? <Route path= "/writeReview" element={<WriteReviewPage />} /> : '' }

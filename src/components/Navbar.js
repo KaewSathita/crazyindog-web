@@ -70,6 +70,8 @@ function Navbar() {
                 { user.penName || user.firstName} 
               </button>
               <ul className="dropdown-menu">
+                <li><Link className="dropdown-item" to="/myProfile">My  Profile</Link></li>
+                <li><hr className="dropdown-divider" /></li>
                 <li><Link className="dropdown-item" to="/editProfile">Edit Profile</Link></li>
                 <li><hr className="dropdown-divider" /></li>
                 <li><a className="dropdown-item" onClick={handleLogout}>Log out</a></li>

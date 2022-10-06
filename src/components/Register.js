@@ -3,6 +3,7 @@ import { toast } from 'react-toastify';
 import { useAuth } from '../context/AuthContext';
 import { useLoading } from '../context/LoadingContext';
 import { useNavigate } from "react-router-dom";
+import { validateRegister } from '../validations/userValidate';
 
 function Register() {
   const navigate = useNavigate();
@@ -25,8 +26,11 @@ function Register() {
   };
 
   const handleSubmitForm = async e => {
-    console.log(input)
     e.preventDefault();
+    const { error } = validateRegister(input);
+    if (error) {
+      return toast.error(error.message);
+    }
     try {
       startLoading();
       await register(input);
