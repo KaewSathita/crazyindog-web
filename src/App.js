@@ -6,7 +6,7 @@ import Spinner from './components/ui/Spinner';
 
 function App() {
   const { loading } = useLoading();
-  const { initialLoading } = useAuth();
+  // const { initialLoading } = useAuth();
 
   return (
     <>

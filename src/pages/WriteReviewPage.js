@@ -1,8 +1,8 @@
-import React from 'react'
+import WriteReview from '../components/WriteReview'
 
 function WriteReviewPage() {
   return (
-    <h1> Write Review Page </h1>
+    <WriteReview />
   )
 }
 
