@@ -59,6 +59,7 @@ function AuthContextProvider({ children }) {
     setUser(res.data.user);
   };
 
+
   return (
     <AuthContext.Provider value={{ user, login, logout, register, updateMe, initialLoading, updateProfileImg }}>
       {children}

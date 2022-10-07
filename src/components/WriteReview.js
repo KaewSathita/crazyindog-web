@@ -6,6 +6,7 @@ import 'react-quill/dist/quill.snow.css';
 
 function WriteReview() {
   const { user } = useAuth();
+  // const { WriteReview } = 
 
   const [value, setValue] = useState('');
 
@@ -34,6 +35,36 @@ function WriteReview() {
           </div>
         </div>
 
+        <form >
+        {/* <form onSubmit={handleFileUploadForm}> */}
+            <label for="coverPhoto" className="form-label">รูปภาพหน้าปก</label>
+            <div className="mb-3">
+              <img
+                className="avatar"
+                src='https://placehold.jp/640x360.png'
+                alt="Avatar"
+                style={{ maxWidth: "100%", maxHeight: "220px" }}                
+              />
+
+            </div>
+            <div className="mb-3" style={{ maxWidth: "300px" }}>
+              <input className="form-control" type="file" id="formFile" 
+              // <input className="form-control" ref={inputEl} type="file" id="formFile" 
+                // onChange={e => {
+                //   // console.dir(e.target.files);
+                //   if (e.target.files[0]){
+                //     setFile(e.target.files[0]);
+                //   }
+                // }} 
+              />
+              
+            </div>
+            <div className="mb-2">
+              <button className="btn btn-primary">Upload</button>
+            </div>
+          </form>
+
+
         <div className="mb-3">
           <label for="description" className="form-label">รายละเอียด</label>
           <ReactQuill id="description"
@@ -42,7 +73,8 @@ function WriteReview() {
         </div>
 
 
-      <div className="container mt-5 pt-4">
+      {/* <div className="container mt-5 pt-4"> */}
+      <div className="mt-5 pt-4">
         <div className="row">
           <div className="col-lg-12">
             <div className="card">
