@@ -9,6 +9,8 @@ import './index.css';
 import App from './App';
 import AuthContextProvider from './context/AuthContext';
 import LoadingContextProvider from './context/LoadingContext';
+import CategoryContextProvider from "./context/CategoryContext";
+import ReviewContextProvider from "./context/ReviewContext";
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -17,7 +19,11 @@ root.render(
   <BrowserRouter>
     <LoadingContextProvider>
       <AuthContextProvider>
-        <App />
+        <CategoryContextProvider>
+          <ReviewContextProvider>
+            <App />
+          </ReviewContextProvider>
+        </CategoryContextProvider>
       </AuthContextProvider>
     </LoadingContextProvider>
   </BrowserRouter>

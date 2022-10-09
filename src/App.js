@@ -1,7 +1,6 @@
 import Router from "./route/Router";
 import { ToastContainer } from 'react-toastify';
 import { useLoading } from './context/LoadingContext';
-import { useAuth } from './context/AuthContext';
 import Spinner from './components/ui/Spinner';
 
 function App() {

@@ -1,8 +1,8 @@
 import React from 'react'
 import Footer from '../components/Footer';
 import HeroBanner from '../components/HeroBanner';
-import LatestHotelReviews from '../components/LatestHotelReviews';
-import LatestPlaceReviews from '../components/LatestPlaceReviews';
+import ReviewsByCategory from '../components/ReviewsByCategory';
+import LatestReviews from '../components/LatestReviews';
 
 
 
@@ -10,10 +10,10 @@ function HomePage() {
   return (
     <div>
       <HeroBanner></HeroBanner>
-      <LatestPlaceReviews></LatestPlaceReviews>
-      <LatestHotelReviews></LatestHotelReviews>
+      <LatestReviews maxItems={6}></LatestReviews>
+      <ReviewsByCategory categoryId={1} maxItems={6}></ReviewsByCategory>
+      <ReviewsByCategory categoryId={2} maxItems={6}></ReviewsByCategory>
       <Footer/>
-      
     </div>
   )
 }

@@ -1,11 +1,11 @@
 import React from 'react'
 import Footer from '../components/Footer';
-import ReviewPage from '../components/ReviewPage';
+import Review from '../components/Review';
 
 function WriteReviewPage() {
   return (
     <div>
-      <ReviewPage></ReviewPage>
+      <Review></Review>
       <Footer></Footer>
     </div>
   )

@@ -20,7 +20,6 @@ function Login() {
   };
 
   const handleSubmitForm = async e => {
-    console.log(input)
     e.preventDefault();
     try {
       startLoading();
