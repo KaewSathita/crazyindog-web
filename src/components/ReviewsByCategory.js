@@ -49,7 +49,7 @@ function ReviewsByCategory(props) {
       getCategoryById(props.categoryId);
       getReviewsByCategoryId(props.categoryId);
     }
-  }, [reviews, categoryId]);
+  }, [reviews, categories, categoryId]);
 
   const getReviews = (allReviews) => {
     if (props.maxItems === -1) {
@@ -64,7 +64,7 @@ function ReviewsByCategory(props) {
 
   return (
     <>
-      <p className="fs-3 mt-3 mb-3">
+      <p className="fs-3 mt-3 mb-3 fw-bold">
         รีวิวล่าสุดในหมวด {getCategoryName(category)}{" "}
       </p>
       <hr className="featurette-divider"></hr>
@@ -73,24 +73,27 @@ function ReviewsByCategory(props) {
           theReviews.length > 0 &&
           getReviews(theReviews).map((review, index) => {
             return (
-              <div className="col-md-4" key={index}>
-                <div className="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-                  <div className="col p-4 d-flex flex-column position-static">
-                    <h3 className="mb-0">{review.title}</h3>
-                    <div className="mb-1 text-muted">
-                      {timeSince(review.createdAt)}
-                    </div>
-                    <p className="card-text mb-auto">{review.shortDesc}</p>
-                    <Link
-                      className="stretched-link"
-                      to={`/reviews/${review.id}`}
-                    >
-                      อ่านต่อ...
-                    </Link>
-                  </div>
-                  <div className="col-auto d-none d-lg-block">
-                    <div className="picDog col-auto d-none d-lg-block">
-                      <img src={review.posterImage} alt={review.title} />
+              <div className="col-md-4 col-sm-6" key={index}>
+                <div className="card mb-4">
+                  <img
+                    src={review.posterImage}
+                    className="card-img-top"
+                    alt={review.title}
+                  />
+                  <div className="card-body">
+                    <h5 className="card-title my-title">{review.title}</h5>
+                    <p className="card-text my-short-desc2">
+                      {review.shortDesc}
+                    </p>
+                    <div className="row">
+                      <div className="col-6">
+                        <span className="text-muted fs-6 fw-light fst-italic">
+                          {timeSince(review.createdAt)} ago
+                        </span>
+                      </div>
+                      <div className="col-6 text-end">
+                        <Link to={`/reviews/${review.id}`}>อ่านต่อ...</Link>
+                      </div>
                     </div>
                   </div>
                 </div>

@@ -1,4 +1,5 @@
 import { Outlet } from "react-router-dom"
+import Footer from "../../components/Footer"
 import Container from "../containers/Container"
 import Header from "./Header"
 
@@ -9,6 +10,7 @@ function WebLayout() {
       <Container>
         <Outlet />
       </Container>
+      <Footer/>
     </>
   )
 }

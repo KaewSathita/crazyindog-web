@@ -12,7 +12,8 @@ import AddPhotoButton from "./ui/AddPhotoButton";
 import { useParams } from "react-router-dom";
 
 function EditReview() {
-  const { id } = useParams();
+  let { id } = useParams();
+  id = parseInt(id);
   const [input, setInput] = useState({
     title: "",
     categoryId: 0,

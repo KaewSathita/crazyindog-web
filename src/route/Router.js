@@ -26,6 +26,7 @@ function Router() {
         { user ? <Route path= "/reviews/:id/edit" element={<EditReviewPage />} />: ''}
         { user ? <Route path= "/write-review" element={<WriteReviewPage />} /> : '' }
       </Route>
+     
       <Route path= "/login" element={<LoginPage />} />
       <Route path= "/register" element={<RegisterPage />} />
     <Route/>

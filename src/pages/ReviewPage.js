@@ -6,7 +6,7 @@ function WriteReviewPage() {
   return (
     <div>
       <Review></Review>
-      <Footer></Footer>
+ 
     </div>
   )
 }

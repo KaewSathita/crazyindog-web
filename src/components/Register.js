@@ -48,7 +48,7 @@ function Register() {
   return (
     <div className={'login-bg'}>
       <div className="d-flex vh-100 justify-content-center align-items-center">
-        <div className="card w-45" style={{maxWidth : "600px"}}  >
+        <div className="card w-50" style={{maxWidth : "600px"}}  >
           <div className="card-body py-5 px-3">
             <div className="d-flex justify-content-center">
               <img className="crazyindog-logo" src="https://res.cloudinary.com/crazyindog/image/upload/v1664351088/crazyindog/1663515867348_fgwvrn.png" alt="Crazy in Dog"/>

@@ -75,7 +75,8 @@ function MyProfile() {
                     alt={review.title}
                   />
                   <div className="card-body">
-                    <p className="card-text">{review.title}</p>
+                    <h5 className="card-title my-title">{review.title}</h5>
+                    <p className="card-text my-short-desc2">{review.shortDesc}</p>
                     <div className="d-flex justify-content-end align-items-center">
                       <div className="d-flex justify-content-between align-items-center">
                         <div className="btn-group">

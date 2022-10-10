@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useReview } from "../context/ReviewContext";
+import { Link } from "react-router-dom";
 
 function HeroBanner() {
   const { reviews } = useReview();
@@ -13,10 +14,11 @@ function HeroBanner() {
   return (
     <div
       id="carouselExampleCaptions"
-      className="carousel slide"
-      data-bs-ride="false"
+      className="carousel slide pointer-event"
+      data-bs-ride="carousel"
+      
     >
-      <div className="carousel-indicators">
+      <div className="carousel-indicators" >
         {reviews &&
           reviews.length > 0 &&
           reviews.slice(0, 3).map((review, index) => {
@@ -34,7 +36,7 @@ function HeroBanner() {
             );
           })}
       </div>
-      <div className="carousel-inner">
+      <div className="carousel-inner pt-3">
         {reviews &&
           reviews.length > 0 &&
           reviews.slice(0, 3).map((review, index) => {
@@ -43,9 +45,13 @@ function HeroBanner() {
                 <img
                   src={review.posterImage}
                   className="d-block w-100"
-                  style={{ height: "587px", overflow: "hidden" }}
+                  style={{ width:'100%', overflow: "hidden" }}
                   alt={review.title}
                 />
+                <Link className="stretched-link" to={`/reviews/${review.id}`}
+                >
+                </Link>
+
                 <div className="carousel-caption d-none d-md-block">
                   <h5>{review.title}</h5>
                   <p>{review.shortDesc}</p>
@@ -72,8 +78,11 @@ function HeroBanner() {
         <span className="carousel-control-next-icon" aria-hidden="true"></span>
         <span className="visually-hidden">Next</span>
       </button>
+
+      
     </div>
   );
+
 }
 
 export default HeroBanner;

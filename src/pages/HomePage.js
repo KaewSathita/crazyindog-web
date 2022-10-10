@@ -13,7 +13,7 @@ function HomePage() {
       <LatestReviews maxItems={6}></LatestReviews>
       <ReviewsByCategory categoryId={1} maxItems={6}></ReviewsByCategory>
       <ReviewsByCategory categoryId={2} maxItems={6}></ReviewsByCategory>
-      <Footer/>
+      
     </div>
   )
 }

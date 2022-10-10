@@ -32,7 +32,7 @@ function ReviewContextProvider({ children }) {
     const res = await reviewService.update(id, payload);
     const idx = reviews.findIndex(item => item.id === id);
     const newReviews = [...reviews];
-    if (idx) {
+    if (idx >= 0) {
       newReviews.splice(idx, 1, res.data.review);
     } else { // impossible
       newReviews.push(res.data.review);
@@ -44,7 +44,7 @@ function ReviewContextProvider({ children }) {
     const res = await reviewService.destroy(id);
     const idx = reviews.findIndex(item => item.id === id);
     const newReviews = [...reviews];
-    if (idx) {
+    if (idx >= 0) {
       newReviews.splice(idx, 1);
     }
     setReviews(newReviews);

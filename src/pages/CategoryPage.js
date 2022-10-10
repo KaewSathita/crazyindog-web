@@ -9,7 +9,7 @@ function HomePage() {
   return (
     <div>
       { categoryId ? <ReviewsByCategory maxItems={-1}></ReviewsByCategory> : '' }
-      <Footer/>
+      
     </div>
   )
 }

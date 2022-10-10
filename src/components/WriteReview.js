@@ -65,16 +65,15 @@ function WriteReview() {
       startLoading();
 
       await createReview(formData);
-      setInput({
-        title: "",
-        categoryId: 0,
-        shortDesc: "",
-        description: "",
-        posterImage: "",
-      });
-
-      // setImage(null);
+      
+      input.title = "";
+      input.categoryId = 0;
+      input.shortDesc = "";
+      input.description = "";
+      input.posterImage = ""
+      
       toast.success("review created");
+              
     } catch (err) {
       console.log(err);
       toast.error(err.response?.data.message);
@@ -184,8 +183,8 @@ function WriteReview() {
             />
           </div>
 
-          <div className="mb-3">
-            <label htmlFor="description" className="form-label">
+          <div className="mb-3" >
+            <label htmlFor="description" className="form-label" >
               รายละเอียด
             </label>
             <ReactQuill
@@ -195,6 +194,8 @@ function WriteReview() {
               value={input.description}
               onChange={handleSetDescription}
               placeholder="เริ่มเขียนรีวิว..."
+              style={{height: "400px"}}
+              
             />
           </div>
 

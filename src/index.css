@@ -61,3 +61,48 @@ code {
 }
 
 
+.my-short-desc {
+  overflow-y: visible;
+  overflow-x: hidden;
+  width: 100%;
+  word-wrap: break-word;
+  }
+  
+  .my-short-desc2 {
+    overflow: hidden;
+    width: 100%;
+    height: 50px;
+    word-wrap: break-word;
+    }
+
+  .my-title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  }
+
+  .circle-div {
+    background-color: #314963;
+    height: 40px;
+    width: 40px;
+    border-radius: 100%;
+    position: fixed;
+    bottom: 21px;
+    right: 25px;
+    }
+
+  .circle-div {
+    background-color: dodgerblue;
+    color: white;
+    height: 50px;
+    width: 50px;
+    border-radius: 40px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    }
+    
+    .circle-div a {
+    text-decoration: none;
+    color: white;
+    } 
